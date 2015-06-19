@@ -1,0 +1,17 @@
+
+ <div class= "col-md-12">
+ 	<div class="well">
+
+  <h3><%= link_to task.description, task,remote: true, method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+ %></h3>
+  <p><%= local_time(task.deadline, '%B %e, %Y %l:%M%P' ) %></p>
+  
+  <%= link_to  edit_task_path(task), remote: true  do%>
+  <button 
+  <%= link_to "Delete", task, remote: true, method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+
+
+
+</li>

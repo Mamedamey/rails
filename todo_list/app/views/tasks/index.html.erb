@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "row" >
+	<div class="col-md3">
+<%= link_to , new_task_path, remote: true do %>
+
+<button class= "btn btn-info">
+	<i class= "fa fa-pencil"></i> New Task
+</button>
+
+<div id="task-form" style="display:none;"></div>  
+</div>
+<div class ="col-md-9"
+
+<h2> My Tasks</h2>
+<div id="tasks">
+	<div class = "row" >
+   <%= render @tasks %>
+  
+</div>
+</div>
+</div>
+

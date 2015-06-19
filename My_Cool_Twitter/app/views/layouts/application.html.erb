@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyCoolTwitter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <%= link_to "Your Feed", root_path, class: "navbar-brand" %>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-left">
+	      	<li>
+	          <%= link_to tweets_path do %>
+	            <span class="glyphicon glyphicon-record"></span> All Tweets
+	          <% end %>
+	        </li>
+	        <!-- Future Links! -->
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	      	<% if user_signed_in? %>
+		        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+		        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+	        <% else %>
+	        	<li><%= link_to "Sign Up",  new_user_registration_path %></li>
+        		<li><%= link_to "Forgot Password",  new_user_password_path %></li>
+	        <% end %>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+
+
+
+
+
+
+
+
+
+
+<%= yield %>
+
+</body>
+</html>
